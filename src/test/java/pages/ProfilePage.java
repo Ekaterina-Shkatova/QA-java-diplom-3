@@ -17,7 +17,7 @@ public class ProfilePage {
         this.driver = driver;
     }
 
-    public void openPersonalAccountPage() {
+    public void openProfilePage() {
         driver.get(PERSONAL_ACCOUNT_PAGE);
     }
 

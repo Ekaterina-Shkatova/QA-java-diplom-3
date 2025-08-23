@@ -1,7 +1,7 @@
 package burgertest;
 
+import steps.ApiSteps;
 import steps.RegistrationSteps;
-import api.ApiSteps;
 import browser.Browser;
 import browser.BrowserClass;
 import com.fasterxml.jackson.core.JsonProcessingException;

@@ -1,5 +1,6 @@
 package burgertest;
 
+import steps.ApiSteps;
 import steps.LoginSteps;
 import browser.Browser;
 import browser.BrowserClass;
@@ -37,7 +38,7 @@ public class LoginTest {
 
     @BeforeEach
     public void initializationData(){
-        api.ApiSteps apiSteps = new api.ApiSteps();
+        ApiSteps apiSteps = new ApiSteps();
         apiSteps.userCreate(REGISTRATION_NAME, REGISTRATION_EMAIL, REGISTRATION_PASSWORD);
     }
 
@@ -64,7 +65,7 @@ public class LoginTest {
     public void tearDown() throws JsonProcessingException {
         driver.quit();
 
-        api.ApiSteps apiSteps = new api.ApiSteps();
+        ApiSteps apiSteps = new ApiSteps();
         apiSteps.userDelete(REGISTRATION_EMAIL, REGISTRATION_PASSWORD);
     }
 

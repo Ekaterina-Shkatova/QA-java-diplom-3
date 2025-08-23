@@ -26,9 +26,9 @@ public class ConstructorTest {
 
     @ParameterizedTest
     @MethodSource("getData")
-    @DisplayName("Раздел Конструктор")
-    @Description("Проверяем, что работают переходы к разделам")
-    public void checkConstructorList(Browser browserName) {
+    @DisplayName("Раздел Конструктор Булки")
+    @Description("Проверяем, что работает переход к разделу Булки")
+    public void checkConstructorBuns(Browser browserName) {
 
         BrowserClass browserClass = new BrowserClass();
         WebDriver driver = browserClass.getWebDriver(browserName);
@@ -37,14 +37,43 @@ public class ConstructorTest {
         ConstructorSteps constructorSteps = new ConstructorSteps(driver);
         constructorSteps.openConstructorPage();
 
-        boolean bunsVisible = constructorSteps.checkBuns();
-        assertTrue(bunsVisible, "Переход к булкам не работает");
+        boolean bunsSelected = constructorSteps.checkBuns();
+        assertTrue(bunsSelected, "Переход к булкам не работает");
+    }
 
-        boolean sousesVisible = constructorSteps.checkSouses();
-        assertTrue(sousesVisible, "Переход к соусам не работает");
+    @ParameterizedTest
+    @MethodSource("getData")
+    @DisplayName("Раздел Конструктор Соусы")
+    @Description("Проверяем, что работает переход к разделу Соусы")
+    public void checkConstructorSouses(Browser browserName) {
 
-        boolean fillinsVisible = constructorSteps.checkFilling();
-        assertTrue(fillinsVisible, "Переход к начинкам не работает");
+        BrowserClass browserClass = new BrowserClass();
+        WebDriver driver = browserClass.getWebDriver(browserName);
+        this.driver = driver;
+
+        ConstructorSteps constructorSteps = new ConstructorSteps(driver);
+        constructorSteps.openConstructorPage();
+
+        boolean sousesSelected = constructorSteps.checkSouses();
+        assertTrue(sousesSelected, "Переход к соусам не работает");
+
+    }
+
+    @ParameterizedTest
+    @MethodSource("getData")
+    @DisplayName("Раздел Конструктор Начинки")
+    @Description("Проверяем, что работает переход к разделу Начинки")
+    public void checkConstructorFillins(Browser browserName) {
+
+        BrowserClass browserClass = new BrowserClass();
+        WebDriver driver = browserClass.getWebDriver(browserName);
+        this.driver = driver;
+
+        ConstructorSteps constructorSteps = new ConstructorSteps(driver);
+        constructorSteps.openConstructorPage();
+
+        boolean fillinsSelected = constructorSteps.checkFilling();
+        assertTrue(fillinsSelected, "Переход к начинкам не работает");
     }
 
     @AfterEach

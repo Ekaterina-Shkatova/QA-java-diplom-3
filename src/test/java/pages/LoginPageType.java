@@ -1,0 +1,8 @@
+package pages;
+
+public enum LoginPageType {
+    LOGIN_MAIN_PAGE,
+    LOGIN_PERSONAL_ACCOUNT,
+    LOGIN_REGISTRATION_PAGE,
+    LOGIN_RESTORE_PASSWORD_PAGE
+}
